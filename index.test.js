@@ -1,8 +1,7 @@
 const {db} = require('./db');
 const {Band, Musician} = require('./index')
 const {
-    seedBand,
-    seedMusician,
+    metalica, owlcity, orvillpeck, ozzy, susan, kiss
   } = require('./seedData');
 
 describe('Band and Musician Models', () => {
