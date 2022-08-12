@@ -1,4 +1,4 @@
-const { Band, Musician } = require('../../index.js')
+const { Band, Musician, Song } = require('../../models')
 const { db } = require('../../db')
 
 async function main () {
@@ -35,6 +35,20 @@ async function main () {
         name: 'Susan Boyle',
         instrument: 'Tabmerine'
     })
+
+    // create some songs
+    const thunderstruck = await metalica.createSong({
+        title: 'Thunderstruck',
+    })
+
+    const verge = await metalica.createSong({
+        title: 'Verge',
+    })
+
+    // kiss covers some songs
+    await kiss.addSong(thunderstruck)
+    await kiss.addSong(verge)
+
 }
 
 main()
